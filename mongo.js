@@ -10,7 +10,7 @@ const newName = process.argv[3];
 const newNumber = process.argv[4];
 const url = `mongodb://dburpo:${password}@ds213118.mlab.com:13118/hy_fullstack_puhelinluettelo_production`;
 
-mongoose.connect(url,  {useNewUrlParser: true});
+mongoose.connect(url,  { useNewUrlParser: true });
 
 const personSchema = new mongoose.Schema({
   name: String,
@@ -33,7 +33,7 @@ else {
   Person.find({}).then(result => {
     console.log('Puhelinluettelo: ')
     result.forEach(person => {
-      console.log(person.name + " " + person.number);
+      console.log(person.name + ' ' + person.number);
     });
     mongoose.connection.close();
   });
